@@ -151,8 +151,8 @@ function Invoke-ParseConfig ([string] $configDir) {
     [string[]]$ignoreList = if ($config.containsKey('ignore')) { [string[]]$config['ignore'] } else { [string[]]@() }
 
     [int]$period = Convert-StringToTime $periodString
-    $savePath = [IO.Path]::GetFullPath($savePath)
-    $targetPath = [IO.Path]::GetFullPath($targetPath)
+    $savePath = [IO.Path]::GetFullPath($savePath, $PWD)
+    $targetPath = [IO.Path]::GetFullPath($targetPath, $PWD)
     [string[]]$ignoreListRelative = $ignoreList.Clone()
 
     for ($index = 0; $index -lt $ignoreList.Count; $index++) {
