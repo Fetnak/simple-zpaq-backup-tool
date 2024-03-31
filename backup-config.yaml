@@ -1,0 +1,7 @@
+config:
+  save_path: "./backup.zpaq"
+  target: "./test"
+  period: "30m"
+  ignore:
+    - ignoredir/
+    - ignorefile.txt
